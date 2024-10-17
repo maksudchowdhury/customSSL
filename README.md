@@ -8,12 +8,6 @@ Click above to watch a full walkthrough of the project on YouTube.
 
 ---
 
-[![Download Script](https://img.shields.io/badge/Download-Script-blue?style=for-the-badge&logo=github)](https://github.com/your-repo/download-script)
-[![Project Documentation](https://img.shields.io/badge/View-Documentation-brightgreen?style=for-the-badge)](https://github.com/your-repo/documentation)
-[![Get Started](https://img.shields.io/badge/Get-Started-orange?style=for-the-badge)](#how-to-run)
-
----
-
 ## Project Overview
 
 In this project, I accomplished the following:
