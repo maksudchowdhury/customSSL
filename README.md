@@ -2,9 +2,14 @@
 
 This project demonstrates my ability to build a secure web server from scratch, focusing on **cybersecurity** practices such as **SSL/TLS encryption**. I utilized **OpenSSL** to create a **self-signed certificate authority (RootCA and SubCA)** and generate server SSL certificates. The process was fully automated using Linux shell scripting, showcasing my proficiency in both **Linux** and **cryptography**.
 
-[![Watch the video](https://img.youtube.com/vi/2AdqcC8hQNI/0.jpg)](https://www.youtube.com/watch?v=2AdqcC8hQNI)
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/ccf99cf7-d6d2-430b-acb2-72ddf119d50" />
+</p>
 
-Click above to watch a full walkthrough of the project on YouTube.
+![image](https://github.com/user-attachments/assets/ccf99cf7-d6d2-430b-acb2-72ddf119d501)
+
+
+[![Watch the Video](https://img.shields.io/badge/Watch-Video-red?style=for-the-badge)](https://www.youtube.com/watch?v=2AdqcC8hQNI)
 
 ---
 
@@ -85,4 +90,4 @@ The shell script automates:
 
 ---
 
-[![Watch the Video](https://img.shields.io/badge/Watch-Video-red?style=for-the-badge)](https://www.youtube.com/watch?v=2AdqcC8hQNI)
+
