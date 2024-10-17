@@ -35,11 +35,13 @@ The shell script automates:
 2. **Key & Certificate Generation:**
     - Generates private keys for the RootCA, SubCA, and server.
     - Creates and signs certificates with respective configurations.
+
 <br>
 
     ```bash
     openssl genrsa -aes256 -out root-ca/private/ca.key 1024
     openssl req -config root-ca/root-ca.conf -key root-ca/private/ca.key -new -x509 -days 7305 -sha256 -extensions v3_ca -out root-ca/certs/ca.crt
+
     ```
 
 3. **SSL Certificate Creation:**
