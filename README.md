@@ -1,4 +1,4 @@
-# Custom Self-Signed SSL: Automated Certificate Generation for Secure Web Servers
+# Self-Signed Custom SSL Certificate Generation
 
 This project demonstrates my ability to build a secure web server from scratch, focusing on **cybersecurity** practices such as **SSL/TLS encryption**. I utilized **OpenSSL** to create a **self-signed certificate authority (RootCA and SubCA)** and generate server SSL certificates. The process was fully automated using Linux shell scripting, showcasing my proficiency in both **Linux** and **cryptography**.
 
