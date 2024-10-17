@@ -36,6 +36,7 @@ The shell script automates:
     - Generates private keys for the RootCA, SubCA, and server.
     - Creates and signs certificates with respective configurations.
 <br>
+
     ```bash
     openssl genrsa -aes256 -out root-ca/private/ca.key 1024
     openssl req -config root-ca/root-ca.conf -key root-ca/private/ca.key -new -x509 -days 7305 -sha256 -extensions v3_ca -out root-ca/certs/ca.crt
@@ -44,6 +45,7 @@ The shell script automates:
 3. **SSL Certificate Creation:**
     - The SubCA signs the server SSL certificate, ensuring a proper certificate chain.
     <br>
+    
     ```bash
     openssl req -key server/private/server.key -new -sha256 -out server/csr/server.csr
     openssl ca -config sub-ca/sub-ca.conf -extensions server_cert -days 365 -notext -in server/csr/server.csr -out server/certs/server.crt
@@ -52,6 +54,7 @@ The shell script automates:
 4. **Packaging and Export:**
     - Gathers all relevant certificates and keys into a single directory for easy deployment.
 <br>
+
     ```bash
     cp root-ca/certs/ca.crt generated
     cp server/certs/server.crt generated
