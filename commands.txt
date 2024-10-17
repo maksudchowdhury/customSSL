@@ -1,0 +1,52 @@
+------------------- generating necessary folder -------------------
+
+mkdir -p {root-ca,sub-ca,server}/{private,certs,index,serial,pem,crl,csr}
+mkdir generated
+touch root-ca/index/index
+touch sub-ca/index/index
+openssl rand -hex 16 > root-ca/serial/serial
+openssl rand -hex 16 > sub-ca/serial/serial
+cp root-ca.conf root-ca
+cp sub-ca.conf sub-ca
+
+
+------------------- generating RootCA & SubCA -------------------
+
+openssl genrsa -aes256 -out root-ca/private/ca.key 1024
+
+openssl genrsa -aes256 -out sub-ca/private/sub-ca.key 1024
+
+openssl genrsa -out server/private/server.key 1024
+
+openssl req -config root-ca/root-ca.conf -key root-ca/private/ca.key -new -x509 -days 7305 -sha256 -extensions v3_ca -out root-ca/certs/ca.crt
+
+openssl req -config sub-ca/sub-ca.conf -new -key sub-ca/private/sub-ca.key -sha256 -out sub-ca/csr/sub-ca.csr
+
+openssl ca -config root-ca/root-ca.conf -extensions v3_intermediate_ca -days 365 -notext -in sub-ca/csr/sub-ca.csr -out sub-ca/certs/sub-ca.crt
+
+
+
+
+------------------- generating Server SSL Certificate -------------------
+
+
+openssl req -key server/private/server.key -new -sha256 -out server/csr/server.csr
+
+openssl ca -config sub-ca/sub-ca.conf -extensions server_cert -days 365 -notext -in server/csr/server.csr -out server/certs/server.crt
+
+openssl pkcs12 -inkey server/private/server.key -in server/certs/server.crt -export -out server/certs/server.pfx
+
+
+
+------------------- Gathering Files together -------------------
+
+cp root-ca/certs/ca.crt generated
+cp sub-ca/certs/sub-ca.crt generated
+cp server/certs/server.crt generated
+cp server/private/server.key generated
+cp server/certs/server.pfx generated
+
+
+
+
+
